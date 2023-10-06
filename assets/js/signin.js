@@ -21,14 +21,14 @@ function entrar() {
   let listaUser = [];
 
   let userValid = {
-    nome: "",
-    user: "",
-    senha: "",
+    nome: null,
+    user: null,
+    senha: null,
   };
 
   listaUser = JSON.parse(localStorage.getItem("listaUser"));
 
-  listaUser.forEach((item) => {
+  listaUser?.forEach((item) => {
     if (usuario.value == item.userCad && senha.value == item.senhaCad) {
       userValid = {
         nome: item.nomeCad,
@@ -39,11 +39,11 @@ function entrar() {
   });
 
   if (usuario.value == userValid.user && senha.value == userValid.senha) {
-    window.location.href =
-      "./index.html";
+    window.location.href = "./index.html";
     let token =
       Math.random().toString(16).substr(2) +
       Math.random().toString(16).substr(2);
+
     localStorage.setItem("token", token);
 
     localStorage.setItem("userLogado", JSON.stringify(userValid));
