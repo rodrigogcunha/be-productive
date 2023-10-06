@@ -94,9 +94,8 @@ function cadastrar() {
     msgError.innerHTML = "";
 
     setTimeout(() => {
-      window.location.href =
-        "https://cdpn.io/pen/debug/QWzqYPE?authentication_hash=gaMeYggjvGNM";
-    }, 3000);
+      window.location.href = "../html/signin.html";
+    }, 2000);
   } else {
     msgError.setAttribute("style", "display: block");
     msgError.innerHTML =
